@@ -1,5 +1,5 @@
 import { Time } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Booking } from '../_models/booking.model';
 import { User } from '../_models/user.model';
 import { BookingService } from '../_services/booking.service';
@@ -7,11 +7,12 @@ import { TokenStorageService } from '../_services/token-storage.service';
 import { UserService } from '../_services/user.service';
 
 @Component({
-  selector: 'app-board-user',
-  templateUrl: './board-user.component.html',
-  styleUrls: ['./board-user.component.css'],
+  selector: 'app-scheduler',
+  templateUrl: './scheduler.component.html',
+  styleUrls: ['./scheduler.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class BoardUserComponent implements OnInit {
+export class SchedulerComponent implements OnInit {
   constructor(
     private userService: UserService,
     private bookingService: BookingService,
@@ -38,12 +39,12 @@ export class BoardUserComponent implements OnInit {
   public purchaseHours(hours: number): void {
     const user = this.tokenStorageService.getUser();
     const booking = new Booking(
-      0,
-      this.date,
-      this.time,
-      this.description,
+      new Date(),
+      new Date(),
+      new Date(),
       hours,
-      user
+      'This is a description',
+      user.id
     );
     console.log(user);
     this.bookingService.createBooking(booking).subscribe({

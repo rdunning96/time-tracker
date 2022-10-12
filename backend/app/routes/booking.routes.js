@@ -16,7 +16,7 @@ module.exports = function (app) {
     [authJwt.verifyToken],
     bookingController.createBooking
   );
-  app.get("/", [authJwt.verifyToken], bookingController.getBookings);
+  app.get("/api/bookings", [authJwt.verifyToken], bookingController.getBookings);
   app.delete(
     "/:bookingId",
     [authJwt.verifyToken],

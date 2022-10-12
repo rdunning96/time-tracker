@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BoardUserComponent } from './board-user.component';
+import { SchedulerComponent } from './scheduler.component';
 
-describe('BoardUserComponent', () => {
-  let component: BoardUserComponent;
-  let fixture: ComponentFixture<BoardUserComponent>;
+describe('SchedulerComponent', () => {
+  let component: SchedulerComponent;
+  let fixture: ComponentFixture<SchedulerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BoardUserComponent ]
+      declarations: [ SchedulerComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(BoardUserComponent);
+    fixture = TestBed.createComponent(SchedulerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

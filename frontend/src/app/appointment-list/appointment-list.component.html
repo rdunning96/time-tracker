@@ -1,0 +1,34 @@
+<!--list scheduled bookings-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Appointments</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Appointment ID</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Appointment Status</th>
+            <th>Appointment Type</th>
+            <th>Appointment Notes</th>
+            <th>Appointment Location</th>
+            <th>Appointment Customer</th>
+            <th>Appointment Employee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <!--list booking properties-->
+            <td>{{appointment._id}}</td>
+            <td>{{appointment.dateCreated}}</td>
+            <td>{{appointment.start}}</td>
+            <td>{{appointment.end}}</td>
+            <td>{{appointment.durationInHours}}</td>
+            <td>{{appointment.description}}</td>
+            <td>{{appointment.userId}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

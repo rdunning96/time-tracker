@@ -19,7 +19,9 @@ export class BookingService {
   constructor(private http: HttpClient, private authService: AuthService) {}
   //get all bookings
   getBookings(): Observable<Booking[]> {
-    return this.http.get<Booking[]>(API_URL + 'bookings', httpOptions);
+    console.log('get bookings');
+    console.log('API_URL: ' + API_URL);
+    return this.http.get<Booking[]>(API_URL, httpOptions);
   }
   //get bookings by user
   getBookingsByUser(user: User): Observable<Booking[]> {
@@ -49,7 +51,7 @@ export class BookingService {
   //update booking
   updateBooking(booking: Booking): Observable<Booking> {
     return this.http.put<Booking>(
-      API_URL + 'bookings/' + booking.id,
+      API_URL + 'bookings/' + booking._id,
       booking,
       httpOptions
     );
@@ -57,7 +59,7 @@ export class BookingService {
   //delete booking
   deleteBooking(booking: Booking): Observable<Booking> {
     return this.http.delete<Booking>(
-      API_URL + 'bookings/' + booking.id,
+      API_URL + 'bookings/' + booking._id,
       httpOptions
     );
   }

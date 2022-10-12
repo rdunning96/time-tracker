@@ -2,27 +2,26 @@ import { User } from './user.model';
 
 //booking model
 export class Booking {
-  id: number;
-  date: Date;
-  time: number;
+  _id?: number;
+  dateCreated: Date;
+  start: Date;
+  end: Date;
+  durationInHours: number;
   description: string;
-  duration: number;
-  user: User;
   userId: number;
   constructor(
-    id: number,
-    date: Date,
-    time: number,
+    dateCreated: Date,
+    start: Date,
+    end: Date,
+    durationInHours: number,
     description: string,
-    duration: number,
-    user: User
+    userId: number
   ) {
-    this.id = id;
-    this.date = date;
-    this.time = time;
+    this.dateCreated = dateCreated;
+    this.start = start;
+    this.end = end;
+    this.durationInHours = durationInHours;
     this.description = description;
-    this.duration = duration;
-    this.user = user;
-    this.userId = user.id;
+    this.userId = userId;
   }
 }
