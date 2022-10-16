@@ -8,49 +8,13 @@
 <div class="container">
   <mat-tab-group mat-align-tabs="start">
     <mat-tab label="your label"
-      ><header class="jumbotron">
-        <h3>Purchase Time</h3>
-      </header>
-      <body>
-        <div class="row">
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">1 Hour</h5>
-                <p class="card-text">1 Hour of time</p>
-                <a (click)="purchaseHours(1)" class="btn btn-primary"
-                  >Purchase</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">8 Hours</h5>
-                <p class="card-text">8 Hours of time</p>
-                <a (click)="purchaseHours(8)" class="btn btn-primary"
-                  >Purchase</a
-                >
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">40 Hours</h5>
-                <p class="card-text">40 Hours of time</p>
-                <a (click)="purchaseHours(40)" class="btn btn-primary"
-                  >Purchase</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </body></mat-tab
+      >
+        <app-room-list></app-room-list>
+        <app-time-list></app-time-list>
+      </mat-tab
     >
-    <mat-tab label="your label"
-      ><app-appointment-list></app-appointment-list
+    <mat-tab label="your label">
+      <app-appointment-list></app-appointment-list
     ></mat-tab>
     <mat-tab label="your label">your Content </mat-tab>
   </mat-tab-group>

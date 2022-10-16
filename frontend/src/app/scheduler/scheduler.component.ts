@@ -36,7 +36,7 @@ export class SchedulerComponent implements OnInit {
     });
   }
 
-  public purchaseHours(hours: number): void {
+  public purchaseHours(hours: number): void{
     const user = this.tokenStorageService.getUser();
     const booking = new Booking(
       new Date(),

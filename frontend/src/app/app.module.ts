@@ -13,8 +13,11 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { SchedulerComponent } from './scheduler/scheduler.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import { AppointmentListComponent } from './scheduler/components/appointment-list/appointment-list.component';
+import { RoomListComponent } from './scheduler/components/room-list/room-list.component';
+import { TimeListComponent } from './scheduler/components/time-list/time-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,8 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
     BoardModeratorComponent,
     SchedulerComponent,
     AppointmentListComponent,
+    RoomListComponent,
+    TimeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +39,7 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
     FormsModule,
     HttpClientModule,
     MatTabsModule,
+    MatRadioModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

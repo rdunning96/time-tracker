@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Booking } from '../_models/booking.model';
-import { BookingService } from '../_services/booking.service';
-import { TokenStorageService } from '../_services/token-storage.service';
-import { UserService } from '../_services/user.service';
+import { Booking } from 'src/app/_models/booking.model';
+import { BookingService } from 'src/app/_services/booking.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
+import { UserService } from 'src/app/_services/user.service';
 
 @Component({
   selector: 'app-appointment-list',
