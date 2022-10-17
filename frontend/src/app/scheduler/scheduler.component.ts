@@ -1,6 +1,7 @@
 import { Time } from '@angular/common';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Booking } from '../_models/booking.model';
+import { Room } from '../_models/room.model';
 import { User } from '../_models/user.model';
 import { BookingService } from '../_services/booking.service';
 import { TokenStorageService } from '../_services/token-storage.service';
@@ -18,7 +19,8 @@ export class SchedulerComponent implements OnInit {
     private bookingService: BookingService,
     private tokenStorageService: TokenStorageService
   ) {}
-
+  public selectedRoom: Room | undefined;
+  public selectedTime: number | undefined;
   public content: string = '';
   public date: Date = new Date();
   public time: number = 0;
@@ -34,6 +36,14 @@ export class SchedulerComponent implements OnInit {
         this.content = JSON.parse(err.error).message;
       },
     });
+  }
+
+  public roomSelected(e: any): void{
+    this.selectedRoom = e.value;
+  }
+
+  public timeSelected(e: any): void{
+    this.selectedTime = e.value;
   }
 
   public purchaseHours(hours: number): void{

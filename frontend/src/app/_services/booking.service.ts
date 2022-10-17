@@ -19,8 +19,6 @@ export class BookingService {
   constructor(private http: HttpClient, private authService: AuthService) {}
   //get all bookings
   getBookings(): Observable<Booking[]> {
-    console.log('get bookings');
-    console.log('API_URL: ' + API_URL);
     return this.http.get<Booking[]>(API_URL, httpOptions);
   }
   //get bookings by user

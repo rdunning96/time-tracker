@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Room } from 'src/app/_models/room.model';
 
 @Component({
@@ -10,6 +10,8 @@ export class RoomListComponent implements OnInit {
   //rooms variable
   public rooms: Room[] = [];
   public selectedRoom: Room | undefined;
+  @Output() public roomSelected: EventEmitter<Room> = new EventEmitter<Room>();
+  
   constructor() { }
 
   public ngOnInit(): void {
@@ -24,12 +26,12 @@ export class RoomListComponent implements OnInit {
       new Room('Room 3', 'This is room 3', 10, 'This is the location'),
     ];
   }
-  public selectRoom(roomNum: number): void{
-    console.log(roomNum);
-  }
-
+  
   public onRoomChange(room: any): void{
-    console.log(room);
+    //set selected room
+    this.selectedRoom = room;
+    //emit selected room
+    this.roomSelected.emit(this.selectedRoom);
   }
 
 }
