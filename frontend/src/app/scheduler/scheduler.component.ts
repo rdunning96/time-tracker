@@ -40,6 +40,7 @@ export class SchedulerComponent implements OnInit {
 
   public roomSelected(e: any): void{
     this.selectedRoom = e.value;
+    console.log(this.selectedRoom);
   }
 
   public timeSelected(e: any): void{
@@ -63,4 +64,8 @@ export class SchedulerComponent implements OnInit {
       },
     });
   }
+  
+  public purchaseTime() {
+    console.log('purchase time');
+  }    
 }

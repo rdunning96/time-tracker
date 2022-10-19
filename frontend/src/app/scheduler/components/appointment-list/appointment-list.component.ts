@@ -19,7 +19,12 @@ constructor(
   public appointments: Booking[] = [];
 
   ngOnInit(): void {
-    this.bookingService.getBookings().subscribe(
+    this.getCurrentUserBookings();
+  }
+
+  public getCurrentUserBookings(): void {
+    const user = this.tokenStorageService.getUser();
+    this.bookingService.getBookingsByUser(user).subscribe(
       (data) => {
         this.appointments = data;
       }

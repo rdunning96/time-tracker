@@ -17,11 +17,6 @@ const roomSchema = new Schema({
     location: {
         type: String,
         required: true,
-    },
-    userId: {
-        type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true,
-    },
+    }
 });
 module.exports = mongoose.model("Room", roomSchema);

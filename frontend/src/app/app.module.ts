@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppointmentListComponent } from './scheduler/components/appointment-list/appointment-list.component';
 import { RoomListComponent } from './scheduler/components/room-list/room-list.component';
 import { TimeListComponent } from './scheduler/components/time-list/time-list.component';
+import { CreateRoomComponent } from './board-admin/create-room/create-room.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { TimeListComponent } from './scheduler/components/time-list/time-list.co
     AppointmentListComponent,
     RoomListComponent,
     TimeListComponent,
+    CreateRoomComponent,
   ],
   imports: [
     BrowserModule,

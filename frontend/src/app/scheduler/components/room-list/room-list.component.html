@@ -6,7 +6,7 @@
 <body>
   <div class="row">
     <!--radio button room selection-->
-    <div class="col-sm-4" *ngFor="let room of rooms">
+    <div class="col-sm-4" *ngFor="let room of rooms$ | async">
       <div class="card">
         <div class="card-body">
             <h5 class="card-title">{{room.name}}</h5>

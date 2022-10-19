@@ -1,5 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Room } from 'src/app/_models/room.model';
+import { RoomService } from 'src/app/_services/room.service';
 
 @Component({
   selector: 'app-room-list',
@@ -8,23 +10,18 @@ import { Room } from 'src/app/_models/room.model';
 })
 export class RoomListComponent implements OnInit {
   //rooms variable
-  public rooms: Room[] = [];
+  public rooms$: Observable<Room[]> | undefined;
   public selectedRoom: Room | undefined;
   @Output() public roomSelected: EventEmitter<Room> = new EventEmitter<Room>();
   
-  constructor() { }
+  constructor(private roomService: RoomService) { }
 
   public ngOnInit(): void {
     this.makeTestRooms();
   }
   // make test rooms
   public makeTestRooms(): void{
-    this.rooms = [
-      //name, description, capacity, location
-      new Room('Room 1', 'This is room 1', 10, 'This is the location'),
-      new Room('Room 2', 'This is room 2', 10, 'This is the location'),
-      new Room('Room 3', 'This is room 3', 10, 'This is the location'),
-    ];
+    this.rooms$ = this.roomService.getRooms();
   }
   
   public onRoomChange(room: any): void{

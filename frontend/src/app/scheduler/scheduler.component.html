@@ -7,15 +7,23 @@
 <!--Header "Purchase sessions here"-->
 <div class="container">
   <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="your label">
+    <mat-tab label="Book Room">
       <app-room-list (roomSelected)="roomSelected($event)"></app-room-list>
       <app-time-list (timeSelected)="timeSelected($event)"></app-time-list>
     </mat-tab>
-    <mat-tab label="your label">
+    <mat-tab label="Your Bookings">
       <app-appointment-list></app-appointment-list
     ></mat-tab>
-    <mat-tab label="your label">your Content </mat-tab>
   </mat-tab-group>
+  <!-- purchase time material button -->
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="purchaseTime()"
+      [disabled]="!selectedTime || !selectedRoom"
+    >
+      Purchase Time
+    </button>
 </div>
 
 <!--Footer-->

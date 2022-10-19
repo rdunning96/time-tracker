@@ -2,7 +2,7 @@
 //
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Booking } from '../_models/booking.model';
 import { User } from '../_models/user.model';
@@ -23,7 +23,8 @@ export class BookingService {
   }
   //get bookings by user
   getBookingsByUser(user: User): Observable<Booking[]> {
-    return this.http.get<Booking[]>(API_URL + '/user/' + user.id, httpOptions);
+    let params = new HttpParams().set('userId', user.id);
+    return this.http.get<Booking[]>(API_URL, { params });
   }
   //get bookings by date
   getBookingsByDate(date: Date): Observable<Booking[]> {

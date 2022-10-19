@@ -11,6 +11,15 @@ exports.getBookings = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
+//get bookings by user
+exports.getBookingsByUser = async (req, res) => {
+  try {
+    const bookings = await Booking.find({ userId: req.params.userId });
+    res.status(200).json(bookings);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
 //create a booking
 exports.createBooking = async (req, res) => {
   console.log("create booking");
