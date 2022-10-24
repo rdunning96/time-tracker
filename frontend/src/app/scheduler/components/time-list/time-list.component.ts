@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, DoCheck, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Booking } from 'src/app/_models/booking.model';
+import { Room } from 'src/app/_models/room.model';
 import { BookingService } from 'src/app/_services/booking.service';
 import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { UserService } from 'src/app/_services/user.service';
@@ -9,37 +10,27 @@ import { UserService } from 'src/app/_services/user.service';
   templateUrl: './time-list.component.html',
   styleUrls: ['./time-list.component.css'],
 })
-export class TimeListComponent implements OnInit {
+export class TimeListComponent implements OnInit, DoCheck {
   public times: number[] = [1, 8, 40];
-  public selectedTime: number | undefined;
+  public timePrices: number[] = [];
+  public selectedTime: number;
 
+  @Input() public room: Room;
   @Output() public timeSelected: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(
     private userService: UserService,
     private bookingService: BookingService,
     private tokenStorageService: TokenStorageService
-  ) {}
+  ) { }
 
 
-  public ngOnInit(): void {}
+  public ngOnInit(): void {
+    this.timePrices = [];
+    console.log(this.room);
+  }
 
-  public purchaseHours(hours: number): void {
-    const user = this.tokenStorageService.getUser();
-    const booking = new Booking(
-      new Date(),
-      new Date(),
-      new Date(),
-      hours,
-      'This is a description',
-      user.id
-    );
-    console.log(user);
-    this.bookingService.createBooking(booking).subscribe({
-      next: (data) => {
-        console.log(data);
-      },
-    });
+  public ngDoCheck(): void {
   }
 
   public onTimeChange(time: any): void {

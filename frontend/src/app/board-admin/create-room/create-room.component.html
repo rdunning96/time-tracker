@@ -16,5 +16,10 @@
         <label>Room Location</label>
         <input type="text" class="form-control" name="roomLocation" [(ngModel)]="roomLocation" required>
     </div>
+    <!-- Price per hour -->
+    <div class="form-group">
+        <label>Price Per Day</label>
+        <input type="number" class="form-control" name="roomPrice" [(ngModel)]="roomPrice" required>
+    </div>
     <button type="submit" class="btn btn-primary" [disabled]="!roomForm.form.valid">Create Room</button>
 </form>

@@ -1,13 +1,13 @@
-<header class="jumbotron">
-  <h3>Purchase Time</h3>
+<!-- <header class="jumbotron">
+  <h3>Select Time Amount</h3>
 </header>
 <body>
-    <!--radio button time selection-->
-    <div class="row">
-      <div class="col-sm-4" *ngFor="let time of times">
+    <div class="row" *ngIf="timePrices.length > 0">
+      <div class="col-sm-4" *ngFor="let time of times; let i = index">
         <div class="card">
           <div class="card-body">
               <h5 class="card-title">{{time}} Hours</h5>
+              <p class="card-text">Price: {{timePrices[i]}}$</p>
               <mat-radio-group
                 aria-label="Select an option"
                 [(ngModel)]="selectedTime"
@@ -22,4 +22,4 @@
         </div>
       </div>
     </div>
-</body>
+</body> -->

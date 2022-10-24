@@ -1,7 +1,12 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
-</div>
-
-<app-create-room></app-create-room>
+<mat-tab-group mat-align-tabs="start">
+  <!-- header create room jumbotron -->
+  <mat-tab label="Create Room">
+    <header class="jumbotron">
+      <h3>Create Room</h3>
+    </header>
+    <app-create-room></app-create-room>
+  </mat-tab>
+  <mat-tab label="Room List">
+    <app-admin-room-list></app-admin-room-list>
+  </mat-tab>
+</mat-tab-group>

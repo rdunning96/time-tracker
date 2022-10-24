@@ -2,6 +2,8 @@
 const Room = require("../models/room.model");
 const { authJwt } = require("../middleware");
 const { response } = require("express");
+//define mongoose
+const mongoose = require("mongoose");
 //get all rooms
 exports.getRooms = async (req, res) => {
     try {
@@ -13,7 +15,6 @@ exports.getRooms = async (req, res) => {
     }
 //create a room
 exports.createRoom = async (req, res) => {
-    console.log("create room");
     const room = req.body;
     const newRoom = new Room(room);
     try {

@@ -15,10 +15,19 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatRadioModule } from '@angular/material/radio';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AppointmentListComponent } from './scheduler/components/appointment-list/appointment-list.component';
+import { BookingListComponent } from './scheduler/components/booking-list/booking-list.component';
 import { RoomListComponent } from './scheduler/components/room-list/room-list.component';
 import { TimeListComponent } from './scheduler/components/time-list/time-list.component';
 import { CreateRoomComponent } from './board-admin/create-room/create-room.component';
+import { AdminRoomListComponent } from './board-admin/admin-room-list/admin-room-list.component';
+import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+//import material datepicker
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { CalendarComponent } from './scheduler/components/calendar/calendar.component';
+import { NgxMatDatetimePickerModule } from '@angular-material-components/datetime-picker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +38,12 @@ import { CreateRoomComponent } from './board-admin/create-room/create-room.compo
     BoardAdminComponent,
     BoardModeratorComponent,
     SchedulerComponent,
-    AppointmentListComponent,
+    BookingListComponent,
     RoomListComponent,
     TimeListComponent,
     CreateRoomComponent,
+    AdminRoomListComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +52,13 @@ import { CreateRoomComponent } from './board-admin/create-room/create-room.compo
     FormsModule,
     HttpClientModule,
     MatTabsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatListModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatInputModule,
+    NgxMatDatetimePickerModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent],

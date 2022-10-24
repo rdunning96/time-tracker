@@ -5,7 +5,8 @@ const { response } = require("express");
 //get all bookings
 exports.getBookings = async (req, res) => {
   try {
-    const bookings = await Booking.find();
+    const bookings = await Booking.find()
+      .populate('room');
     res.status(200).json(bookings);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -14,7 +15,9 @@ exports.getBookings = async (req, res) => {
 //get bookings by user
 exports.getBookingsByUser = async (req, res) => {
   try {
-    const bookings = await Booking.find({ userId: req.params.userId });
+    const bookings = await Booking.find({ userId: req.params.userId }).populate(
+      'room'
+    );
     res.status(200).json(bookings);
   } catch (error) {
     res.status(404).json({ message: error.message });
@@ -22,7 +25,6 @@ exports.getBookingsByUser = async (req, res) => {
 };
 //create a booking
 exports.createBooking = async (req, res) => {
-  console.log("create booking");
   const booking = req.body;
   const newBooking = new Booking(booking);
   try {

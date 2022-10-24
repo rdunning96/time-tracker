@@ -2,7 +2,6 @@
 const { authJwt } = require("../middleware");
 const controller = require("../controllers/room.controller");
 module.exports = function (app) {
-    console.log("room routes");
   app.use(function (req, res, next) {
     res.header(
       "Access-Control-Allow-Headers",

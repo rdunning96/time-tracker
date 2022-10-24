@@ -11,7 +11,7 @@ import { UserService } from '../_services/user.service';
   selector: 'app-scheduler',
   templateUrl: './scheduler.component.html',
   styleUrls: ['./scheduler.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class SchedulerComponent implements OnInit {
   constructor(
@@ -19,53 +19,35 @@ export class SchedulerComponent implements OnInit {
     private bookingService: BookingService,
     private tokenStorageService: TokenStorageService
   ) {}
-  public selectedRoom: Room | undefined;
-  public selectedTime: number | undefined;
+  public selectedRoom: Room;
+  public selectedDate: Date;
   public content: string = '';
   public date: Date = new Date();
   public time: number = 0;
   public description: string = 'This is a description';
   public duration: number = 0;
   public activeTab: string = 'profile';
-  public ngOnInit(): void {
-    this.userService.getUserBoard().subscribe({
-      next: (data) => {
-        this.content = data;
-      },
-      error: (err) => {
-        this.content = JSON.parse(err.error).message;
-      },
-    });
-  }
+  public ngOnInit(): void {}
 
-  public roomSelected(e: any): void{
+  public roomSelected(e: any): void {
     this.selectedRoom = e.value;
-    console.log(this.selectedRoom);
   }
 
-  public timeSelected(e: any): void{
-    this.selectedTime = e.value;
+  public dateSelected(e: any): void {
+    this.selectedDate = e;
   }
 
-  public purchaseHours(hours: number): void{
+  public purchaseTime() {
     const user = this.tokenStorageService.getUser();
     const booking = new Booking(
-      new Date(),
-      new Date(),
-      new Date(),
-      hours,
-      'This is a description',
-      user.id
+      this.selectedDate,
+      user.id,
+      this.selectedRoom,
     );
-    console.log(user);
     this.bookingService.createBooking(booking).subscribe({
       next: (data) => {
         console.log(data);
       },
     });
   }
-  
-  public purchaseTime() {
-    console.log('purchase time');
-  }    
 }

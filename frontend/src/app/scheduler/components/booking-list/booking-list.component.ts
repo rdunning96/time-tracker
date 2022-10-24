@@ -5,18 +5,18 @@ import { TokenStorageService } from 'src/app/_services/token-storage.service';
 import { UserService } from 'src/app/_services/user.service';
 
 @Component({
-  selector: 'app-appointment-list',
-  templateUrl: './appointment-list.component.html',
-  styleUrls: ['./appointment-list.component.css']
+  selector: 'app-booking-list',
+  templateUrl: './booking-list.component.html',
+  styleUrls: ['./booking-list.component.css']
 })
-export class AppointmentListComponent implements OnInit {
-//appointments
+export class BookingListComponent implements OnInit {
+//bookings
 constructor(
   private userService: UserService,
   private bookingService: BookingService,
   private tokenStorageService: TokenStorageService
 ) {}
-  public appointments: Booking[] = [];
+  public bookings: Booking[] = [];
 
   ngOnInit(): void {
     this.getCurrentUserBookings();
@@ -26,7 +26,8 @@ constructor(
     const user = this.tokenStorageService.getUser();
     this.bookingService.getBookingsByUser(user).subscribe(
       (data) => {
-        this.appointments = data;
+        console.log(data);
+        this.bookings = data;
       }
     );
   }

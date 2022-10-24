@@ -22,7 +22,7 @@ module.exports = function (app) {
     bookingController.getBookings
   );
   app.get(
-    "/api/bookings/:userId",
+    "/api/bookings/:userId/",
     [authJwt.verifyToken],
     bookingController.getBookingsByUser
   );

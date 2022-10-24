@@ -10,6 +10,7 @@ import { RoomService } from 'src/app/_services/room.service';
 })
 export class CreateRoomComponent implements OnInit {
   //room name, description, capacity
+  public roomPrice: number = 0;
   public roomName: string = "";
   public roomDescription: string = "";
   public roomCapacity: number = 0;
@@ -36,9 +37,9 @@ export class CreateRoomComponent implements OnInit {
       this.roomName,
       this.roomDescription,
       this.roomCapacity,
-      this.roomLocation
+      this.roomLocation,
+      this.roomPrice,
     );
-    console.log(room);
     this.roomService.addRoom(room).subscribe({
       next: (data: any) => {
         console.log(data);

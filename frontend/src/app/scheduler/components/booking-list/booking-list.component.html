@@ -1,0 +1,25 @@
+
+  <!-- list of bookings -->
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Bookings</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Booking Date</th>
+            <th>Room</th>
+            <th>Location</th>
+            <th>Capacity</th>            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of bookings">
+            <!--list booking properties-->
+            <td>{{booking.date | date}}</td>
+            <td>{{booking.room.name}}</td>
+            <td>{{booking.room.location}}</td>
+            <td>{{booking.room.capacity}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

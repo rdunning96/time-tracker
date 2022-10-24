@@ -1,18 +1,14 @@
-<div class="container">
-  <header class="jumbotron">
-    <p>{{ content }}</p>
-  </header>
-</div>
-
 <!--Header "Purchase sessions here"-->
 <div class="container">
   <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Book Room">
-      <app-room-list (roomSelected)="roomSelected($event)"></app-room-list>
-      <app-time-list (timeSelected)="timeSelected($event)"></app-time-list>
+      <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
+
+      <app-room-list *ngIf="selectedDate != null" (roomSelected)="roomSelected($event)"></app-room-list>
+      <!-- <app-time-list *ngIf="selectedRoom != null" (timeSelected)="timeSelected($event)" [room]="selectedRoom"></app-time-list> -->
     </mat-tab>
     <mat-tab label="Your Bookings">
-      <app-appointment-list></app-appointment-list
+      <app-booking-list></app-booking-list
     ></mat-tab>
   </mat-tab-group>
   <!-- purchase time material button -->
@@ -20,7 +16,7 @@
       mat-raised-button
       color="primary"
       (click)="purchaseTime()"
-      [disabled]="!selectedTime || !selectedRoom"
+      [disabled]="!selectedRoom || !selectedDate"
     >
       Purchase Time
     </button>

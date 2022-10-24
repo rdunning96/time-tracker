@@ -43,7 +43,6 @@ export class BookingService {
 
   //create booking
   createBooking(booking: Booking): Observable<Booking> {
-    console.log(API_URL);
     console.log(booking);
     return this.http.post<Booking>(API_URL, booking, httpOptions);
   }
