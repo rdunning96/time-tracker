@@ -25,6 +25,7 @@
   "homepage": "https://github.com/rdunning96/time-tracker#readme",
   "dependencies": {
     "concurrently": "^7.5.0",
+    "cors": "^2.8.5",
     "husky": "^8.0.1"
   },
   "devDependencies": {
