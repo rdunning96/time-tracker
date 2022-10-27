@@ -1,0 +1,9 @@
+<!-- List of rooms -->
+<div>Test</div>
+<mat-list>
+  <mat-list-item *ngFor="let room of rooms">
+    <h3 mat-line>{{room.name}}</h3>
+    <p mat-line>Price: ${{room.price}}</p>
+    <button mat-button (click)="deleteRoom(room)">Delete</button>
+  </mat-list-item>
+</mat-list>

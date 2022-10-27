@@ -1,0 +1,8 @@
+.nav-item:hover {
+  cursor: pointer;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+}

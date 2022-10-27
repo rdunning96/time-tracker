@@ -1,0 +1,24 @@
+{
+  "name": "time-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdunning96/time-tracker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdunning96/time-tracker/issues"
+  },
+  "homepage": "https://github.com/rdunning96/time-tracker#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
+}

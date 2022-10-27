@@ -1,0 +1,28 @@
+<!--Header "Purchase sessions here"-->
+<div class="container">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Book Room">
+      <app-calendar (dateSelected)="dateSelected($event)"></app-calendar>
+
+      <app-room-list *ngIf="selectedDate != null" (roomSelected)="roomSelected($event)"></app-room-list>
+      <!-- <app-time-list *ngIf="selectedRoom != null" (timeSelected)="timeSelected($event)" [room]="selectedRoom"></app-time-list> -->
+    </mat-tab>
+    <mat-tab label="Your Bookings">
+      <app-booking-list></app-booking-list
+    ></mat-tab>
+  </mat-tab-group>
+  <!-- purchase time material button -->
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="purchaseTime()"
+      [disabled]="!selectedRoom || !selectedDate"
+    >
+      Purchase Time
+    </button>
+</div>
+
+<!--Footer-->
+<footer class="footer">
+  <div class="container"></div>
+</footer>

@@ -1,0 +1,31 @@
+<!--list room options-->
+<header class="jumbotron">
+  <h3>Select a Room</h3>
+</header>
+
+<body>
+  <div class="row">
+    <!--radio button room selection-->
+    <div class="col-sm-4" *ngFor="let room of rooms$ | async">
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{room.name}}</h5>
+            <p class="card-text">{{room.description}}</p>
+            <p class="card-text">Capacity: {{room.capacity}}</p>
+            <p class="card-text">Price: {{room.price}}$</p>
+            
+          <mat-radio-group
+            aria-label="Select an option"
+            [(ngModel)]="selectedRoom"
+          >
+            <mat-radio-button
+              [value]="room"
+              (change)="onRoomChange($event)"
+              >Select</mat-radio-button
+            >
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

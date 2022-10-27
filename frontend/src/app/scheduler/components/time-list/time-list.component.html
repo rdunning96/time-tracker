@@ -1,0 +1,25 @@
+<!-- <header class="jumbotron">
+  <h3>Select Time Amount</h3>
+</header>
+<body>
+    <div class="row" *ngIf="timePrices.length > 0">
+      <div class="col-sm-4" *ngFor="let time of times; let i = index">
+        <div class="card">
+          <div class="card-body">
+              <h5 class="card-title">{{time}} Hours</h5>
+              <p class="card-text">Price: {{timePrices[i]}}$</p>
+              <mat-radio-group
+                aria-label="Select an option"
+                [(ngModel)]="selectedTime"
+              >
+                <mat-radio-button
+                  [value]="time"
+                  (change)="onTimeChange($event)"
+                  >Select</mat-radio-button
+                >
+              </mat-radio-group>
+          </div>
+        </div>
+      </div>
+    </div>
+</body> -->
