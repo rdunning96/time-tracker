@@ -25,10 +25,6 @@ db.mongoose
     console.error("Connection error", err);
     process.exit();
   });
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to rdunning application." });
-});
 require("./app/routes/auth.routes")(app);
 require("./app/routes/user.routes")(app);
 require("./app/routes/booking.routes")(app);
@@ -38,6 +34,20 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+const path = require("path");
+
+if (process.env.NODE_ENV === "production") {
+
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+
+   });
+
+}
 
 function initial() {
   Role.estimatedDocumentCount((err, count) => {
