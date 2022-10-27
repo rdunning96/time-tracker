@@ -15,7 +15,7 @@ exports.getBookings = async (req, res) => {
 //get bookings by user
 exports.getBookingsByUser = async (req, res) => {
   try {
-    const bookings = await Booking.find({ userId: req.params.userId }).populate(
+    const bookings = await Booking.find({ user: req.params.userId }).populate(
       'room'
     );
     res.status(200).json(bookings);

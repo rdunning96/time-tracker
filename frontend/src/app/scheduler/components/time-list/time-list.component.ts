@@ -27,7 +27,6 @@ export class TimeListComponent implements OnInit, DoCheck {
 
   public ngOnInit(): void {
     this.timePrices = [];
-    console.log(this.room);
   }
 
   public ngDoCheck(): void {

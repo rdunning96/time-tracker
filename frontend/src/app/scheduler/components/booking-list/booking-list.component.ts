@@ -26,7 +26,6 @@ constructor(
     const user = this.tokenStorageService.getUser();
     this.bookingService.getBookingsByUser(user).subscribe(
       (data) => {
-        console.log(data);
         this.bookings = data;
       }
     );

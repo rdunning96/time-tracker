@@ -23,8 +23,7 @@ export class BookingService {
   }
   //get bookings by user
   getBookingsByUser(user: User): Observable<Booking[]> {
-    let params = new HttpParams().set('userId', user.id);
-    return this.http.get<Booking[]>(API_URL, { params });
+    return this.http.get<Booking[]>(`${API_URL}/${user.id}`);
   }
   //get bookings by date
   getBookingsByDate(date: Date): Observable<Booking[]> {
@@ -43,7 +42,6 @@ export class BookingService {
 
   //create booking
   createBooking(booking: Booking): Observable<Booking> {
-    console.log(booking);
     return this.http.post<Booking>(API_URL, booking, httpOptions);
   }
   //update booking
