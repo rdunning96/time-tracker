@@ -26,7 +26,8 @@
   "dependencies": {
     "concurrently": "^7.5.0",
     "cors": "^2.8.5",
-    "husky": "^8.0.1"
+    "husky": "^8.0.1",
+    "mongoose": "^6.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.6",
