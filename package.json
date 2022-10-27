@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/rdunning96/time-tracker/issues"
   },
-  "homepage": "https://github.com/rdunning96/time-tracker#readme"
+  "homepage": "https://github.com/rdunning96/time-tracker#readme",
+  "dependencies": {
+    "concurrently": "^7.5.0"
+  }
 }
