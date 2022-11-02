@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/rdunning96/time-tracker#readme",
   "dependencies": {
+    "@angular/cli": "^14.2.8",
     "bcryptjs": "^2.4.3",
     "concurrently": "^7.5.0",
     "cors": "^2.8.5",
