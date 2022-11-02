@@ -4,14 +4,15 @@
   "description": "My webpack project",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\"",
+    "start": "node backend/server.js",
+    "heroku-postbuild": "cd /frontend && npm install && npm run build",
     "build": "webpack --mode=production --node-env=production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "start-concurrent": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\"",
   },
   "repository": {
     "type": "git",
