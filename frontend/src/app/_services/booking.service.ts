@@ -8,7 +8,7 @@ import { Booking } from '../_models/booking.model';
 import { User } from '../_models/user.model';
 import { AuthService } from './auth.service';
 import { environment } from 'src/environments/environment';
-const API_URL = 'http://localhost:8080/api/bookings';
+const API_URL = 'api/bookings';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
 };

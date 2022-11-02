@@ -24,7 +24,6 @@
   },
   "homepage": "https://github.com/rdunning96/time-tracker#readme",
   "dependencies": {
-    "@angular/cli": "^14.2.8",
     "bcryptjs": "^2.4.3",
     "concurrently": "^7.5.0",
     "cors": "^2.8.5",
@@ -34,6 +33,7 @@
     "mongoose": "^6.5.2"
   },
   "devDependencies": {
+    "@angular/cli": "^14.2.8",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
     "@webpack-cli/generators": "^2.5.0",
