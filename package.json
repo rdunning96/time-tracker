@@ -33,6 +33,7 @@
     "mongoose": "^6.5.2"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^14.2.8",
     "@angular/cli": "^14.2.8",
     "@babel/core": "^7.19.6",
     "@babel/preset-env": "^7.19.4",
