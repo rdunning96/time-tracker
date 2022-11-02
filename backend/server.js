@@ -2,9 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dbConfig = require("./app/config/db.config.js");
 const app = express();
-var corsOptions = {
-  origin: "http://localhost:8081",
-};
+
 app.use(cors());
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -31,6 +29,7 @@ require("./app/routes/booking.routes")(app);
 require("./app/routes/room.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
@@ -39,11 +38,11 @@ const path_prod = require("path");
 
 if (process.env.NODE_ENV === "production") {
 
-    app.use(express.static("client/build"));
+    app.use(express.static("../frontend/src"));
 
     app.get("*", (req, res) => {
 
-    res.sendFile(path_prod.resolve(__dirname, "client", "build", "index.html"));
+    res.sendFile(path_prod.resolve(__dirname, "../frontend/src", "index.html"));
 
    });
 
