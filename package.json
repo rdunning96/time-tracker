@@ -12,7 +12,7 @@
     "build:prod": "webpack --mode=production --node-env=production",
     "watch": "webpack --watch",
     "serve": "webpack serve",
-    "start-concurrent": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\"",
+    "start-concurrent": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\""
   },
   "repository": {
     "type": "git",
