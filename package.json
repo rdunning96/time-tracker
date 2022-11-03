@@ -14,9 +14,6 @@
     "serve": "webpack serve",
     "start-concurrent": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\""
   },
-  "engines": {
-    "node": "18.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rdunning96/time-tracker.git"
