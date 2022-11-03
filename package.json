@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "My webpack project",
   "main": "index.js",
-  "engines": {
-    "node": "18.x"
-  },
   "scripts": {
     "start": "node backend/server.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build",
@@ -16,6 +13,9 @@
     "watch": "webpack --watch",
     "serve": "webpack serve",
     "start-concurrent": "concurrently \"cd frontend && npm run start\" \"cd backend && npm run start\""
+  },
+  "engines": {
+    "node": "18.x"
   },
   "repository": {
     "type": "git",
